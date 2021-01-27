@@ -5,23 +5,23 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Comment</th>
+      <th scope="col">Комментарий</th>
 	  <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
    @foreach($reviews as $review)
-   <tr>
+    <tr>
       <td>{{$review->id}}</td>
 	  <td>{{$review->comment}}</td>
-	 <td class="table-buttons">
-	 <a class="btn btn-success" href="{{ route('reviews.show', $review->id) }}" role="button">view</a>
-	 <a class="btn btn-warning" href="{{ route('reviews.edit', $review) }}" role="button">update</a>
-	 <form class="d-inline p-2  text-white" method="POST" action="{{ route('reviews.destroy', $review->id) }}">
+	<td class="table-buttons">
+	 <form  class="d-inline p-2  text-white" method="POST" action="{{ route('reviews.destroy', $review) }}">
 	 {{csrf_field()}}
 	 {{method_field('delete')}}
-	 <button class="btn btn-danger" href="" role="button">delete</button>
+	 <button id="button3" class="btn btn-danger" href="" role="button">delete</button>
 	 </form>
+	 	 <a id="button2" class="btn btn-warning" href="{{ route('reviews.edit', $review) }}" role="button">update</a>
+	 <a id="button1" class="btn btn-success" href="{{ route('reviews.show', $review) }}" role="button">view</a>
 	  </td>
     </tr>
 	 @endforeach

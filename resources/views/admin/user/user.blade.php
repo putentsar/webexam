@@ -13,13 +13,13 @@
     <tr>
       <td>{{$user->id}}</td>
 	  <td>{{$user->name}}</td>
-	 <td class="table-buttons">
-	 <a class="btn btn-success" href="{{ route('users.show', $user->id) }}" role="button">view</a>
-	 <form class="d-inline p-2  text-white" method="POST" action="{{ route('users.destroy', $user->id) }}">
+	<td class="table-buttons">
+	 <form  class="d-inline p-2  text-white" method="POST" action="{{ route('users.destroy', $user) }}">
 	 {{csrf_field()}}
 	 {{method_field('delete')}}
-	 <button class="btn btn-danger" href="" role="button">delete</button>
+	 <button id="button3" class="btn btn-danger" href="" role="button">delete</button>
 	 </form>
+	 <a id="button1" class="btn btn-success" href="{{ route('users.show', $user) }}" role="button">view</a>
 	  </td>
     </tr>
 	 @endforeach

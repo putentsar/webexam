@@ -3,7 +3,7 @@
   <div class="card col-4">
   <div class="card-body">
     <h1>ID: </h1>
-	<p>{{$category->name}}</p>
+	<p>{{$category->id}}</p>
   <h1>Название категории: </h1>
   <p>{{$category->name}}</p>
   <h1>Код категории: </h1>

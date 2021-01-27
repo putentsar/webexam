@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Name</th>
+      <th scope="col">Название блюда</th>
 	  <th scope="col"></th>
     </tr>
   </thead>

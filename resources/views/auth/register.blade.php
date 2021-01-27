@@ -20,7 +20,7 @@
 <div id="app">
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
-            <a class="navbar-brand" href="">
+            <a class="navbar-brand" href="/">
                 Вернуться на сайт
             </a>
 
@@ -43,6 +43,15 @@
 
     <div class="py-4">
         <div class="container">
+		@if($errors->any())
+		<div class="alert alert-danger">
+		<ul>
+		@foreach($errors->all() as $error)
+		<li>{{$error}}</li>
+		@endforeach
+		</ul>
+</div>
+@endif
             <div class="row justify-content-center">
                     <div class="col-md-8">
         <div class="card">

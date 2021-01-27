@@ -14,6 +14,21 @@
     <title>Home page</title>
   </head>
    <style>
+   .pagination {
+	   text-align: center;
+	   margin-top: 5;
+    display: inline-block;
+}
+
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+
    body{
     background-color: #f8f9fa; 
    } 
@@ -40,26 +55,40 @@
    .ingr { display: inline; }
    
    .cd { display: inline; }
-     #button3{
+     
+	 #button3{
 	 float: right;
 	 margin-right:3;
    }
+   
    #button2{
 	 float: right;
 	 margin-right:3;
    }
+   
    #button1{
 	 float: right;
 	 margin-right:3;
    }
+   
    #header{
 	background-color: #2e312f; 
    }
+   
   h2{ text-align: center; }
   
-   
+   #comm{
+	 float: right;
+	 margin-top:5;
+   }
+    #comarea{
+	 margin-top:75;
+   }
   </style>
   <body>
+   @if(session()->has('warning'))
+   <div class="alert alert-danger">{{session()->get('message')}}</div>
+   @endif
   <nav id="nav" class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="http://hardproj.std-1049.ist.mospolytech.ru">Кулинария</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -24,20 +24,23 @@
 	  {{csrf_field()}}
   <div class="form-group">
     <h1 for="formGroupExampleInput">Комментарии</h1>
-    <input type="text" name="comment" class="form-control"  placeholder="comment">
+    <input type="text" name="comment" class="form-control"  placeholder="комментарий...">
 	<input type="text" name="dish_id" class="form-control d-none"  placeholder="dish_id" value="{{$dishes->id}}">
 	<input type="text" name="user_id" class="form-control d-none"  placeholder="user_id" value="{{ Auth::user()->id }}" >
-	<button type="submit" class="btn btn-primary">Отправить</button>
+	<button id="comm" type="submit" class="btn btn-primary">Отправить</button>
   </div>
 </form>
-
+<div id="comarea">
  @foreach($reviewes as $review)
  <b>
- {{$review->user->name}}
+ {{$review->user->name}}  </b> {{$review->created_at}}
+
+ <br>
  {{$review->comment}}
- {{$review->created_at}}
- </b><br>
+<hr>
+<br>
   @endforeach
+  </div>
 </div>
 </div>
 @endsection

@@ -5,23 +5,23 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Name</th>
+      <th scope="col">Название категории</th>
 	  <th scope="col"></th>
     </tr>
   </thead>
-  <tbody>
+   <tbody>
    @foreach($categories as $category)
     <tr>
       <td>{{$category->id}}</td>
 	  <td>{{$category->name}}</td>
-	 <td class="table-buttons">
-	 <a class="btn btn-success" href="{{ route('categories.show', $category->id) }}" role="button">view</a>
-	 <a class="btn btn-warning" href="{{ route('categories.edit', $category) }}" role="button">update</a>
-	 <form class="d-inline p-2  text-white" method="POST" action="{{ route('categories.destroy', $category->id) }}">
+	<td class="table-buttons">
+	 <form  class="d-inline p-2  text-white" method="POST" action="{{ route('categories.destroy', $category) }}">
 	 {{csrf_field()}}
 	 {{method_field('delete')}}
-	 <button class="btn btn-danger" href="" role="button">delete</button>
+	 <button id="button3" class="btn btn-danger" href="" role="button">delete</button>
 	 </form>
+	 	 <a id="button2" class="btn btn-warning" href="{{ route('categories.edit', $category) }}" role="button">update</a>
+	 <a id="button1" class="btn btn-success" href="{{ route('categories.show', $category) }}" role="button">view</a>
 	  </td>
     </tr>
 	 @endforeach
